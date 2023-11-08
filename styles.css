@@ -5,43 +5,152 @@
     padding: 0;
 }
 
-body{
-   
-    
+body {
+    background-image: radial-gradient(
+        circle closest-corner at 90% 5%,
+        #F8DE22 0%,
+        #FEFFAC 40%,
+        #D5FFE4 100%
+    );
+    height: 100vh;
+    overflow: hidden;
+    padding: 2rem;
+    transition: background-image 0.5s;
 }
 
-h1{
-    font-size: 3rem;
-}
+
+
 h2{
     font-size: 2.5rem;
 }
-p{
+p, h3{
     font-size: 2rem;
 }
+
+/*----------------dark mode ---------*/
+.switch{
+    width: 15vw;
+    height: 10ww;
+    
+    display: flex;
+    position: absolute;
+    top: 4rem;
+    left: 2rem;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    width: 30px;
+    height: 16px;
+    border-radius: 14px;
+    background-color: #d2d2d2;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.button::before{
+    content: "";
+    width: 13px;
+    height: 12px;
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    margin: 2px 2px;
+    transition: 1s;
+}
+
+input:checked + .button{
+    background-color: aquamarine;
+    
+}
+input:checked + .button::before{
+    transform: translateX(100%);
+}
+
+
+input:checked + label ~ body {
+    background-image: radial-gradient(
+        circle closest-corner at 90% 5%,
+        #F8DE22 0%,
+        #FEFFAC 40%,
+        #252B48 100%
+    );
+}
+.toggle{
+    display: none;
+}
+
+
+
+/*----------------header container ---------*/
+.header-container{
+    width: 65%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem auto;
+    align-items: center;
+    border: 1px ridge rgba(0, 0, 0, 0.3);
+    padding: 3rem;
+    border-radius: 15px;
+}
+
+hr {
+    border-top: 1px ridge rgba(0, 0, 0, 0.3); 
+    width: 60%;/* Add any other styles you want */
+  }
+/*---------------------------------svg-----------------------------------------------------*/
+svg{
+    width: 350px;
+    height: 60px;
+    text-align: center;
+   
+}
+svg rect{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke: red;
+
+}
+
+svg text{
+    font-size: 3rem;
+    font-weight: 700;
+    margin: auto;
+    
+    
+}
+
 /*---------------------------------navigation-----------------------------------------------------*/
 .navigation{
     
     height: 10vh;
     display: flex;
-    gap: 5rem;
+    justify-content: space-evenly;
+    width: 100%;
     align-items: center;
-    margin-left: 2rem;
+    
     
 }
 
 #navbar ul{
     display: flex;
-    justify-content: flex-start;
     gap: 3rem;
-
 }
+
 #navbar li{
     list-style-type: none;
 }
 #navbar li a{
     text-decoration: none;
     font-size: 2rem;
+    color: #141E46;
 }
 
 /*---------------------------------header-----------------------------------------------------*/
@@ -51,7 +160,7 @@ header{
     margin: 5rem auto;
 }
 
-header h1{
+header h2{
     text-align: center;
     font-style: italic;
 }
@@ -61,8 +170,8 @@ header p{
 }
 
 img{
-    width: 400px;
-    height:500px;
+    width: 200px;
+    height:260px;
     object-fit: cover;
 }
 
